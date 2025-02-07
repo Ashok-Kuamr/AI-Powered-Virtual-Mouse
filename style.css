@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+/* Video Container */
+.video-container {
+    position: relative; /* Allow cursor to be positioned relative to this container */
+    border: 5px solid #00ffcc;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+    max-width: 90%;
+    height: auto;
+}
+
+/* Webcam Feed */
+video {
+    border-radius: 15px;
+    max-width: 100%; /* Fill the container */
+    height: auto;
+}
+
+/* Cursor Styling (Red Dot) */
+#cursor {
+    width: 20px;
+    height: 20px;
+    background-color: #ff0066;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
+    transition: transform 0.1s ease-out;
+    top: 50%; /* Position in the middle of the video */
+    left: 50%; /* Position in the middle of the video */
+    transform: translate(-50%, -50%); /* Center the cursor */
+}
+
+/* Button Styling (Optional) */
+button {
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #00e6b8;
+    transform: scale(1.05);
+}
+
+/* Gesture Display Styling */
+#gesture-display {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 255, 204, 0.5);
+    color: #1a1a1a;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+    text-align: center;
+}
+
+/* Background Animation */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.1), rgba(0, 0, 0, 0));
+    animation: pulse 5s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}

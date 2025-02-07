@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Virtual Mouse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>AI Virtual Mouse</h1>
+    <button id="startWebcamBtn">Start Webcam</button>
+    <button id="stopWebcamBtn" disabled>Stop Webcam</button>
+    <video id="webcam" autoplay></video>
+    <div id="cursor"></div> <!-- Your red dot cursor -->
+
+    <!-- Display detected gesture -->
+    <div id="gesture-display">Gesture: None</div>
+
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    
+    <!-- Load Teachable Machine Image Model -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <!-- Load Main Script -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
